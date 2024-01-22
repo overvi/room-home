@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+@use "utilities" as utils;
+@use "mixinx" as mix;
+@use "config" as c;
+@use "sass:list";
+
+header {
+  background: url(/images/desktop-image-hero-1.jpg) no-repeat;
+  position: relative;
+  flex-basis: 184%;
+
+  .hamburger {
+    z-index: 999;
+    display: none;
+  }
+
+  > div {
+    gap: 3rem;
+    padding: 3rem;
+    align-items: center;
+  }
+
+  .list {
+    gap: 1.5rem;
+    color: white;
+    font-weight: 600;
+
+    li {
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        transition: transform 650ms;
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 80%;
+        background-color: #fff;
+        inset: 0;
+        margin: auto;
+        bottom: -1.5rem;
+        transform: scale(0);
+      }
+      &:hover {
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+.showcase {
+  padding: 5rem;
+  @include mix.flow-content(1.5rem);
+
+  a {
+    letter-spacing: 1rem;
+    transition: color 850ms;
+
+    img {
+      display: inline;
+      transition: filter 850ms;
+    }
+
+    &:hover {
+      color: map-get(utils.$colors, "gray");
+
+      img {
+        filter: invert(0.5);
+      }
+    }
+  }
+}
+
+.about {
+  padding: 3.5rem;
+  @include mix.flow-content;
+
+  h2 {
+    letter-spacing: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+.change-img {
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.2rem 1.5rem;
+  width: 11rem;
+}
+
+.footer-items {
+  img {
+    width: 100%;
+  }
+
+  > * {
+    flex-basis: 50%;
+  }
+}
+
+.mobile-nav {
+  transition: opacity 750ms;
+  padding: 1.5rem;
+  display: none;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  z-index: 10;
+
+  .list {
+    gap: 1.5rem;
+  }
+}
+
+.inset {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  z-index: 5;
+  display: none;
+}
+
+@media (width < 960px) {
+  @include mix.tablet;
+}
+
+@media (width < 460px) {
+  @include mix.mobile;
+}

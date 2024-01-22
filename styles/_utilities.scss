@@ -1,0 +1,33 @@
+@use "sass:list";
+
+$colors: (
+  "gray": hsl(0, 0%, 63%),
+  "dark": hsl(0, 0%, 0%),
+  "dark-gray": hsl(0, 0%, 27%),
+);
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

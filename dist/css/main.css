@@ -1,0 +1,233 @@
+.text-gray {
+  color: hsl(0, 0%, 63%);
+}
+
+.bg-gray {
+  background-color: hsl(0, 0%, 63%);
+}
+
+.text-dark {
+  color: hsl(0, 0%, 0%);
+}
+
+.bg-dark {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.text-dark-gray {
+  color: hsl(0, 0%, 27%);
+}
+
+.bg-dark-gray {
+  background-color: hsl(0, 0%, 27%);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul[class] {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  font-size: 0.9rem;
+  font-family: "League Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+header {
+  background: url(/images/desktop-image-hero-1.jpg) no-repeat;
+  position: relative;
+  flex-basis: 184%;
+}
+header .hamburger {
+  z-index: 999;
+  display: none;
+}
+header > div {
+  gap: 3rem;
+  padding: 3rem;
+  align-items: center;
+}
+header .list {
+  gap: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+header .list li {
+  position: relative;
+  cursor: pointer;
+}
+header .list li::before {
+  content: "";
+  transition: transform 650ms;
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 80%;
+  background-color: #fff;
+  inset: 0;
+  margin: auto;
+  bottom: -1.5rem;
+  transform: scale(0);
+}
+header .list li:hover::before {
+  transform: scale(1);
+}
+
+.showcase {
+  padding: 5rem;
+}
+.showcase > * + * {
+  margin-top: 1.5rem;
+}
+.showcase a {
+  letter-spacing: 1rem;
+  transition: color 850ms;
+}
+.showcase a img {
+  display: inline;
+  transition: filter 850ms;
+}
+.showcase a:hover {
+  color: hsl(0, 0%, 63%);
+}
+.showcase a:hover img {
+  filter: invert(0.5);
+}
+
+.about {
+  padding: 3.5rem;
+}
+.about > * + * {
+  margin-top: 1rem;
+}
+.about h2 {
+  letter-spacing: 0.5rem;
+  font-size: 1rem;
+}
+
+.change-img {
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.2rem 1.5rem;
+  width: 11rem;
+}
+
+.footer-items img {
+  width: 100%;
+}
+.footer-items > * {
+  flex-basis: 50%;
+}
+
+.mobile-nav {
+  transition: opacity 750ms;
+  padding: 1.5rem;
+  display: none;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  z-index: 10;
+}
+.mobile-nav .list {
+  gap: 1.5rem;
+}
+
+.inset {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  z-index: 5;
+  display: none;
+}
+
+@media (width < 960px) {
+  .mobile-nav {
+    display: flex;
+    opacity: 0;
+  }
+  header {
+    background-position: center bottom;
+    background-size: cover;
+    flex-basis: unset;
+    height: 30rem;
+  }
+  header .hamburger {
+    display: block;
+  }
+  header div {
+    gap: 0;
+  }
+  header .list {
+    display: none;
+  }
+  header .logo {
+    margin: auto;
+  }
+  .flex-container {
+    flex-direction: column;
+  }
+  .change-img {
+    position: absolute;
+    right: 0;
+    top: 26.1rem;
+  }
+  .showcase {
+    padding: 2.5rem;
+  }
+}
+@media (width < 460px) {
+  header {
+    background: url(/images/mobile-image-hero-1.jpg) no-repeat;
+    flex-basis: unset;
+    background-size: cover;
+  }
+}/*# sourceMappingURL=main.css.map */
